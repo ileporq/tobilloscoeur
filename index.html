@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page protégée</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="connexion">
+    <form id="formulaire">
+      <input
+        type="password"
+        id="motDePasse"
+        placeholder="Mot de passe"
+        required
+      >
+      <button type="submit">Entrer</button>
+    </form>
+
+    <p id="erreur" role="alert"></p>
+  </div>
+
+  <div id="contenu" hidden>
+    <h2>Ma lettre jamais arrivée...</h2>
+    <audio controls src="slgc.mp3"></audio>
+    <img id="timbre" src="timbre.png" alt="">
+    <p id="yo">Comme ta boîte au lettre fait disparaître le courrier, je te fais une nouvelle lettre (qui est une reconstitution archéologique de ma mémoire de la première) qui arrivera forcément à destination :-) </p>
+    <p>Ma chère lulu, je profite de la panne de mon flixbus au beau milieu des Yvelines pour t'écrire.
+        Je voulais te remercier pour ces 2 belles journées aux Sables.
+        Cette ville, et cette maison, sont des endroits dans lesquels je me sens apaisé.
+        On y mange bien, la vie est douce et les paysages sont beaux, <b>mais surtout tu es là et ça me remplit de joie</b>.
+        Les choses que tu dis et que tu penses font de toi une personne très inspirante.
+        Tu me fais aussi beaucoup rire, mais ça je pense que tu étais déjà au courant. 
+        J'espère que tu iras vite mieux, et qu'on s'habituera aussi vite à mon nouveau rythme !
+    </p>
+    <p><b>Je t'aime</b></p>
+    <p>imoOoOoOo</p>
+    <p id="yo">En même temps j'avais pris deux cartes à l'Île Penotte mais j'avais mis qu'un euro c'est ptet pour ça...</p>
+    <img src="IMG_5869.JPG" alt="">
+    <p>********</p>
+    <img src="IMG_5885.JPG" alt="">
+    <p>Lettre originale écrite le 4 octobre, vers 19 heures, sous vraie panne</p>
+  </div>
+
+  <script>
+    const motDePasseCorrect = "clint";
+
+    document
+      .getElementById("formulaire")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const saisie = document.getElementById("motDePasse").value;
+
+        if (saisie === motDePasseCorrect) {
+          document.getElementById("connexion").hidden = true;
+          document.getElementById("contenu").hidden = false;
+        } else {
+          document.getElementById("erreur").textContent =
+            "Mot de passe incorrect.";
+        }
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color : #413223
+}
+
+p{
+    width: 300px;
+    color: rgb(255, 165, 240);
+}
+
+#yo{
+    font-style: italic;
+    color: rgb(155, 222, 193);
+}
+
+h2{
+    background-color: rgb(255, 165, 240);
+    color: #000000;
+}
+
+
+img{
+    max-height: 300px;
+}
+
+#timbre{
+    max-height: 100px;
+}
